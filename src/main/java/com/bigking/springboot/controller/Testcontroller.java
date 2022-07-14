@@ -3,10 +3,14 @@ package com.bigking.springboot.controller;
 import com.bigking.springboot.bean.testUser;
 import com.bigking.springboot.service.testService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 
@@ -16,6 +20,15 @@ public class Testcontroller {
 
     @Autowired
     private testService testService;
+
+    @Resource(name = "lettuceRedisTemplate")
+    public StringRedisTemplate stringRedisTemplate;
+
+//    @Resource(name = "redisTemplate")
+//    public StringRedisTemplate stringRedisTemplate1;
+
+//    @Autowired
+//    public RedisTemplate redisTemplate;
 
      @RequestMapping(value="hello")
      public String testStart(){
@@ -42,6 +55,18 @@ public class Testcontroller {
             }
             List<testUser> userList = testService.selectByName(name);
             return ResponseEntity.ok(userList);
+
+
+    }
+
+    @RequestMapping(value="redistest", method = RequestMethod.GET)
+    public ResponseEntity<?> redistest(){
+
+        stringRedisTemplate.opsForValue().set("1111111", "22");
+
+        String message = stringRedisTemplate.opsForValue().get("1111111");
+
+        return ResponseEntity.ok(message);
 
 
     }
