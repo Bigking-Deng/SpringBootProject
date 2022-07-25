@@ -1,10 +1,10 @@
 package com.bigking.springboot.controller;
 
-import com.bigking.springboot.bean.testUser;
+import com.bigking.springboot.KafkaListener.DessertJob;
+import com.bigking.springboot.bean.TestUser;
 import com.bigking.springboot.service.testService;
+import com.bigking.springboot.utils.KafkaConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,11 +24,12 @@ public class Testcontroller {
     @Resource(name = "lettuceRedisTemplate")
     public StringRedisTemplate stringRedisTemplate;
 
-//    @Resource(name = "redisTemplate")
-//    public StringRedisTemplate stringRedisTemplate1;
 
-//    @Autowired
-//    public RedisTemplate redisTemplate;
+//    @Resource(name = "kafkaTemplate")
+//    public KafkaTemplate<String, String> kafkaTemplate;
+
+    @Autowired
+    public KafkaConsumer kafkaConsumer;
 
      @RequestMapping(value="hello")
      public String testStart(){
@@ -36,7 +37,7 @@ public class Testcontroller {
      }
 
      @RequestMapping(value="insertUser", method = RequestMethod.POST)
-     public ResponseEntity<?> insertUser(@RequestBody testUser user){
+     public ResponseEntity<?> insertUser(@RequestBody TestUser user){
          try{
              testService.insertUser(user);
              return ResponseEntity.ok("success");
@@ -53,7 +54,7 @@ public class Testcontroller {
             if(name==null){
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
             }
-            List<testUser> userList = testService.selectByName(name);
+            List<TestUser> userList = testService.selectByName(name);
             return ResponseEntity.ok(userList);
 
 
@@ -67,6 +68,18 @@ public class Testcontroller {
         String message = stringRedisTemplate.opsForValue().get("1111111");
 
         return ResponseEntity.ok(message);
+
+
+    }
+
+    @RequestMapping(value="kafkatest", method = RequestMethod.GET)
+    public ResponseEntity<?> kafkatest(){
+
+
+
+
+
+        return ResponseEntity.ok("success");
 
 
     }

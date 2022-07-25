@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @MapperScan(value = "com.bigking.springboot.dao", sqlSessionFactoryRef = "druidSqlSessionFactory")
-public class datasourceConfig {
+public class DatasourceConfig {
 
 
     @ConfigurationProperties(prefix = "spring.datasource.master")

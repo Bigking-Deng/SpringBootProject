@@ -18,7 +18,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Configuration
-public class lettuceClusterConfig {
+public class LettuceClusterConfig {
 
     @Value("${wap-live-quality.sj.redis.cluster.nodes}")
     private String sj_nodes;

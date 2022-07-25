@@ -1,6 +1,6 @@
 package com.bigking.springboot.bean.eunmBean;
 
-public enum gender {
+public enum Gender {
    MALE,
    FEMALE
 }

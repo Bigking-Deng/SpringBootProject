@@ -3,11 +3,11 @@
 
 <mapper namespace="com.bigking.springboot.dao.UserMapper">
 
-    <insert id="insertUser" parameterType="com.bigking.springboot.bean.testUser">
+    <insert id="insertUser" parameterType="com.bigking.springboot.bean.TestUser">
         insert into testUser(name , age, gender) values (#{name}, #{age}, #{gender})
     </insert>
 
-    <select id="selectByName" parameterType="string" resultType="com.bigking.springboot.bean.testUser">
+    <select id="selectByName" parameterType="string" resultType="com.bigking.springboot.bean.TestUser">
         select name, age, gender from testUser a where a.name = #{name}
     </select>
 </mapper>

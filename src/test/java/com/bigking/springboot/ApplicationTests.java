@@ -1,6 +1,6 @@
 package com.bigking.springboot;
 
-import com.bigking.springboot.bean.testUser;
+import com.bigking.springboot.bean.TestUser;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,8 +17,8 @@ class ApplicationTests {
 
     @Test
     void contextLoads() {
-        testUser t1 = new testUser();
-        testUser t2 = new testUser();
+        TestUser t1 = new TestUser();
+        TestUser t2 = new TestUser();
         System.out.println(t1.getClass() + "  " + t2.getClass());
         System.out.println(t1.getClass() == t2.getClass());
         System.out.println(t1.getClass().equals(t2.getClass()));
