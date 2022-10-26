@@ -8,6 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = BIGApplication.class)
 class ApplicationTests {
@@ -17,11 +20,20 @@ class ApplicationTests {
 
     @Test
     void contextLoads() {
-        TestUser t1 = new TestUser();
-        TestUser t2 = new TestUser();
-        System.out.println(t1.getClass() + "  " + t2.getClass());
-        System.out.println(t1.getClass() == t2.getClass());
-        System.out.println(t1.getClass().equals(t2.getClass()));
+//        TestUser t1 = new TestUser();
+//        TestUser t2 = new TestUser();
+//        System.out.println(t1.getClass() + "  " + t2.getClass());
+//        System.out.println(t1.getClass() == t2.getClass());
+//        System.out.println(t1.getClass().equals(t2.getClass()));
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        List<Integer> list1 = list.subList(1, 1);
+        int t = 0;
+        for(int i =1; i<0; i++){
+            t++;
+        }
+
     }
 
     @Test
