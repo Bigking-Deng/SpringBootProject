@@ -28,11 +28,8 @@ class ApplicationTests {
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
-        List<Integer> list1 = list.subList(1, 1);
-        int t = 0;
-        for(int i =1; i<0; i++){
-            t++;
-        }
+        list.add(3);
+
 
     }
 
