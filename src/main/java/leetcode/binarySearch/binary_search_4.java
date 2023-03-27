@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.binarySearch;
 
 public class binary_search_4 {
     public static Integer medianSort(int []A, int []B){

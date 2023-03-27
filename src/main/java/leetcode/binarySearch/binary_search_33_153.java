@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.binarySearch;
 
 public class binary_search_33_153 {
     public static Integer pivotIndex(int [] array){

@@ -1,8 +1,7 @@
 package com.bigking.springboot.controller;
 
-import com.bigking.springboot.KafkaListener.DessertJob;
 import com.bigking.springboot.bean.TestUser;
-import com.bigking.springboot.service.testService;
+import com.bigking.springboot.service.TestService;
 import com.bigking.springboot.utils.KafkaConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -19,7 +18,7 @@ import java.util.List;
 public class Testcontroller {
 
     @Autowired
-    private testService testService;
+    private TestService testService;
 
     @Resource(name = "lettuceRedisTemplate")
     public StringRedisTemplate stringRedisTemplate;

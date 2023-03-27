@@ -1,4 +1,4 @@
-package com.bigking.springboot.Annotation;
+package com.bigking.springboot.annotation;
 
 
 import java.lang.annotation.ElementType;

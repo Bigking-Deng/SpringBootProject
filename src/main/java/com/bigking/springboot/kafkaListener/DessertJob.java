@@ -1,4 +1,4 @@
-package com.bigking.springboot.KafkaListener;
+package com.bigking.springboot.kafkaListener;
 
 import com.bigking.springboot.bean.Dessert;
 import com.bigking.springboot.bean.eunmBean.Status;

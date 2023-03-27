@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.DP;
 
 public class DP_45_55 {
     private static boolean jump1(int arr[]){

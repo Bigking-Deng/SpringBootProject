@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.binarySearch;
 
 public class binary_search_34 {
     public static int[] findBound(int []array, int target){

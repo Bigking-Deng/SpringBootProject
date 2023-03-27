@@ -6,7 +6,7 @@ import com.bigking.springboot.bean.TestUser;
 import java.util.List;
 
 
-public interface testService extends IService<TestUser> {
+public interface TestService extends IService<TestUser> {
 
      void insertUser(TestUser user);
      List<TestUser> selectByName(String name);
