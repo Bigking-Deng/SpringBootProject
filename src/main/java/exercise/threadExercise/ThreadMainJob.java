@@ -2,6 +2,10 @@ package exercise.threadExercise;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 @Slf4j
 public class ThreadMainJob {
 
@@ -10,6 +14,8 @@ public class ThreadMainJob {
     public static void main(String[] args) throws InterruptedException {
         TasksWithNoReturn task1 = new TasksWithNoReturn();
         Tasks2 task2 = new Tasks2();
+
+//        Executor executor  = Executors.newFixedThreadPool(4);
 
         Thread t1 = new Thread(task1, "pool1");
         Thread t2 = new Thread(task2, "pool2");
