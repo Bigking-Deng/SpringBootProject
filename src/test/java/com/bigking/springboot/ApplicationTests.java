@@ -36,11 +36,12 @@ class ApplicationTests {
     }
 
     @Test
-    public void test1(){
+    public void test1() {
         stringRedisTemplateSJ.opsForValue().set("1111111", "22");
 
         System.out.println(stringRedisTemplateSJ.opsForValue().get("1111111"));
     }
+
 
 
 }

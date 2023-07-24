@@ -1,6 +1,4 @@
-package leetcode;
-
-import java.util.Locale;
+package leetcode.DFS_BFS;
 
 public class backtrace_79 {
     public static final int[] dir1 = {1,-1,0,0};

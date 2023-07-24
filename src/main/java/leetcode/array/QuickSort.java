@@ -1,6 +1,4 @@
-package leetcode;
-
-import java.util.Arrays;
+package leetcode.array;
 
 public class QuickSort {
     public static void main(String[] args) {

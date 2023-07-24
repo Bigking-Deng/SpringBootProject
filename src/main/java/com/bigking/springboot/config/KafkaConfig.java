@@ -32,7 +32,6 @@ public class KafkaConfig {
         prop.put(ProducerConfig.BATCH_SIZE_CONFIG, producerConfigsBean.getBatch_size());
         prop.put(ProducerConfig.BUFFER_MEMORY_CONFIG, producerConfigsBean.getBuffer_memory());
         prop.put(ProducerConfig.LINGER_MS_CONFIG, producerConfigsBean.getLinger_ms());
-        prop.put(ProducerConfig.BUFFER_MEMORY_CONFIG, producerConfigsBean.getBuffer_memory());
         prop.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         prop.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         prop.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, "none");

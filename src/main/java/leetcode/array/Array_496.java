@@ -1,6 +1,9 @@
-package leetcode;
+package leetcode.array;
 
-import java.util.*;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 
 public class Array_496 {
     class Solution {
