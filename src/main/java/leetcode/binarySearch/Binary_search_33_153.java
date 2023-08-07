@@ -1,6 +1,6 @@
 package leetcode.binarySearch;
 
-public class binary_search_33_153 {
+public class Binary_search_33_153 {
     public static Integer pivotIndex(int [] array){
         int length = array.length;
         int init = array[0];
@@ -24,14 +24,14 @@ public class binary_search_33_153 {
     }
 
     public static Integer pivotIndex_min(int [] array){
-        if(binary_search_33_153.pivotIndex(array) == -1) return array[0];
-        int index = binary_search_33_153.pivotIndex(array);
+        if(Binary_search_33_153.pivotIndex(array) == -1) return array[0];
+        int index = Binary_search_33_153.pivotIndex(array);
         return array[index];
     }
 
     public static void main(String[] args) {
-        int X = binary_search_33_153.pivotIndex(new int[]{1,2});
-        int Y = binary_search_33_153.pivotIndex_min(new int[]{1,2});
+        int X = Binary_search_33_153.pivotIndex(new int[]{1,2});
+        int Y = Binary_search_33_153.pivotIndex_min(new int[]{1,2});
         System.out.println( X+" "+ Y);
     }
 }

@@ -1,6 +1,6 @@
 package leetcode.binarySearch;
 
-public class binary_search_4 {
+public class Binary_search_4 {
     public static Integer medianSort(int []A, int []B){
         int half, midA, midB, medianA=0, medianB=0;
         boolean isOdd;

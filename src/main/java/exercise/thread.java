@@ -12,6 +12,9 @@ public class thread {
         FutureTask futureTask1 = new FutureTask(callable1);
 //        FutureTask futureTask2 = new FutureTask(callable2);
         Future future = executorService.submit(callable1);
+
+
+
         CompletableFuture completableFuture = CompletableFuture.supplyAsync(()->{
             System.out.println("task2 Thread Name: " + Thread.currentThread().getName());
             return 66;
