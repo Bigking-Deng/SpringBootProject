@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Tree_236 {
+
     Map<TreeNode, TreeNode> map = new HashMap<>();
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
@@ -63,4 +64,8 @@ public class Tree_236 {
         }
     }
 
+
+    public static void main(String[] args) {
+
+    }
 }
