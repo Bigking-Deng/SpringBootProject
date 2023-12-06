@@ -30,6 +30,7 @@ public class DFS_329 {
         }
         map.put(row*matrix[0].length+col, 1+curMax);
         if(1+curMax>totalMax) totalMax=1+curMax;
+        //注意要回溯，不是求面积而是一条一条路径的式
         visited[row][col]=false;
         return 1+curMax;
     }

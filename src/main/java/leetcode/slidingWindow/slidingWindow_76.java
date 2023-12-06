@@ -15,6 +15,8 @@ public class slidingWindow_76 {
         char[] cs = parent.toCharArray();
         while(right<cs.length){
 
+
+            //顺序处理很重要
             curMap.put(cs[right], curMap.getOrDefault(cs[right], 0)+1);
 
             while(left<=right && checkValid(curMap, dict)){
@@ -25,7 +27,10 @@ public class slidingWindow_76 {
                 curMap.put(cs[left], curMap.get(cs[left])-1);
                 left++;
             }
+
             right++;
+
+
 
         }
         return substr;
@@ -41,6 +46,6 @@ public class slidingWindow_76 {
     }
 
     public static void main(String[] args) {
-        String res = minSubStr("djaadmnadhaldj", "aln");
+        String res = minSubStr("ADOBECODEBANC", "ABC");
     }
 }

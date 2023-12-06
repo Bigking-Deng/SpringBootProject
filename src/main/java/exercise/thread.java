@@ -12,6 +12,13 @@ public class thread {
         FutureTask futureTask1 = new FutureTask(callable1);
 //        FutureTask futureTask2 = new FutureTask(callable2);
         Future future = executorService.submit(callable1);
+        Future future1 = executorService.submit(futureTask1);
+        new Thread(futureTask1).start();
+
+
+
+
+
 
 
 
@@ -19,6 +26,8 @@ public class thread {
             System.out.println("task2 Thread Name: " + Thread.currentThread().getName());
             return 66;
         }, executorService);
+
+
 
         Object res1 = null;
         Object res2 = null;

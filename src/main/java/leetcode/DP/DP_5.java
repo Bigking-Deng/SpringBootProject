@@ -1,6 +1,6 @@
 package leetcode.DP;
 
-public class DP_3 {
+public class DP_5 {
     public static String longestPar(String s){
         boolean[][]dp = new boolean[s.length()][s.length()];
         char[] cs = s.toCharArray();

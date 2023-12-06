@@ -8,43 +8,44 @@ import java.util.Set;
 import static net.sf.jsqlparser.parser.feature.Feature.set;
 
 public class DFS_22 {
-   static List<String> res;
-    public static List<String> generateParenthesis(int n) {
-        res = new ArrayList<>();
-        if(n==0) return res;
-        DFS("(",0,n-1,n,n);
+    public List<String> generateParenthesis(int n) {
+        List<String> res = new ArrayList<>();
+        // 特判
+        if (n == 0) {
+            return res;
+        }
+
+        // 执行深度优先遍历，搜索可能的结果
+        dfs("", n, n, res);
         return res;
     }
 
-    private static void DFS(String s, int pairs, int l_remain, int r_remain, int n){
-        if(pairs==n&&l_remain==0&&r_remain==0){
-            res.add(s);
+    /**
+     * @param curStr 当前递归得到的结果
+     * @param left   左括号还有几个可以使用
+     * @param right  右括号还有几个可以使用
+     * @param res    结果集
+     */
+    private void dfs(String curStr, int left, int right, List<String> res) {
+        // 因为每一次尝试，都使用新的字符串变量，所以无需回溯
+        // 在递归终止的时候，直接把它添加到结果集即可，注意与「力扣」第 46 题、第 39 题区分
+        if (left == 0 && right == 0) {
+            res.add(curStr);
+            return;
         }
-        if(s.charAt(s.length()-1)=='('){
-            if(l_remain>0){
-                DFS(s+'(', pairs, l_remain-1, r_remain,n);
-                DFS(s+')', pairs+1, l_remain, r_remain-1,n);
-            }
-            else{
-                DFS(s+')', pairs+1, l_remain, r_remain-1,n);
-            }
-        }
-        if(s.charAt(s.length()-1)==')'){
-            if(l_remain<r_remain){
-                if(l_remain>0){
-                    DFS(s+'(', pairs, l_remain-1, r_remain,n);
-                }
-                DFS(s+')', pairs+1, l_remain, r_remain-1,n);
-            }
-            else {
-                if(l_remain>0)
-                    DFS(s+'(', pairs, l_remain-1, r_remain,n);
 
-            }
+        // 剪枝（如图，左括号可以使用的个数严格大于右括号可以使用的个数，才剪枝，注意这个细节）
+        if (left > right) {
+            return;
+        }
+
+        if (left > 0) {
+            dfs(curStr + "(", left - 1, right, res);
+        }
+
+        if (right > 0) {
+            dfs(curStr + ")", left, right - 1, res);
         }
     }
 
-    public static void main(String[] args) {
-        generateParenthesis(5);
-    }
 }

@@ -1,5 +1,7 @@
 package exercise.threadExercise;
 
+import java.util.concurrent.CountDownLatch;
+
 public class AlternatePrint {
 
     //notify后释放锁，仍是两个线程争抢锁，为了保证一定是另一个线程抢到，设立flag控制顺序
@@ -18,6 +20,7 @@ public class AlternatePrint {
         }
 
     }
+
 
     public void printBar(int count) throws InterruptedException {
         synchronized (lockObj){
